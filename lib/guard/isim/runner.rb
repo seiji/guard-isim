@@ -2,7 +2,7 @@ module Guard
   class Isim
     module Runner
       class << self
-        def reload
+        def reload(path)
           simulator_reload_browser
         end
 
