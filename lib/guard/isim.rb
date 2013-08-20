@@ -9,12 +9,15 @@ module Guard
     def initialize(watchers = [], options = {})
       super
       @options = {
+        :quit_on_stop  => false
         :reload_period => 0
       }
     end
 
     def stop
-      Runner.quit
+      if options[:quit_on_stop]
+        Runner.quit
+      end
     end
 
     def run_on_changes(paths)

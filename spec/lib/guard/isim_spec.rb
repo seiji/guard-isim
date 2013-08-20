@@ -16,7 +16,7 @@ describe Guard::Isim do
   
   describe "#run_on_changes" do
     it "reload browser" do
-      runner.should_receive(:reload)
+      runner.should_receive(:reload).with(['foo'])
       subject.run_on_changes(['foo'])
     end
   end
